@@ -17,7 +17,10 @@ The model needs to be downloaded through the command line before using coca via 
 ```cli
 python -m spacy download fr_core_news_sm
 ```
-
+or
+```cli
+pip -m spacy download fr_core_news_sm
+```
 Once downloaded, the package can be used like any other python library via 'import coca'
 
 ```python
