@@ -2,15 +2,15 @@
 https://test.pypi.org/project/coca/ 
 
 
-coca is a spell checker for French language based on levenshstein distance and Peter Norvig generative algorithm that can detect French spelling errors within 2 edit distance.
+coca is a spell checker for French language based on levenshstein distance and Peter Norvig generative algorithm. It can detect French spelling errors within 2 edit distance.
 
-The user can download the package through the following command line:
+The user can download the package via the following command line:
 ```cli
 pip install -i https://test.pypi.org/simple/ coca==1.0.1
 ```
 The package relies on the spacy language model fr_core_news_sm
 
-The model needs to be downloaded through the command line before using coca through import.
+The model needs to be downloaded through the command line before using coca via import.
 
 ```cli
 python -m spacy download fr_core_news_sm
@@ -33,7 +33,7 @@ Once downloaded, the package can be used like any other python library via 'impo
 >>analyse
 >>["cocolate", "chocolate"]
 #choose the interactif correction mode
->>corrector.correctionAutomatique("J'aime du cocolate.")
+>>corrector.correctionInteratif("J'aime du cocolate.")
 >>forme fautive détectée: éternelement
 ..dans le contexte : désert éternelement gelé
 ..Veuillez choisir une correction possible : .."éternellement", "not found"
