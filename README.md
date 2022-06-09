@@ -6,7 +6,7 @@ coca is a spell checker for French language based on levenshstein distance and P
 
 The user can download the package through the following command line:
 ```cli
-$pip install -i https://test.pypi.org/simple/ coca==1.0.1
+pip install -i https://test.pypi.org/simple/ coca==1.0.1
 ```
 The package relies on the spacy language model fr_core_news_sm
 
