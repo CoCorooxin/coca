@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+setup.py
+coca/__init__.py
+coca/ortho_correct.py
+coca.egg-info/PKG-INFO
+coca.egg-info/SOURCES.txt
+coca.egg-info/dependency_links.txt
+coca.egg-info/requires.txt
+coca.egg-info/top_level.txt

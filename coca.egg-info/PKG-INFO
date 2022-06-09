@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: coca
+Version: 1.1.8
+Summary: a spell checker for French
+Home-page: https://github.com/pypa/sampleproject
+Author: Mathilde, Xin
+Author-email: carolina.maeghan@gmail.com, chenxin9812@gmail.com
+License-File: LICENSE.txt
