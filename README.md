@@ -16,7 +16,7 @@ The model needs to be downloaded through the command line before using coca thro
 python -m spacy download fr_core_news_sm
 ```
 
-Once downloaded, the package can be used as any other python library via 'import ortho_correct'
+Once downloaded, the package can be used like any other python library via 'import coca'
 
 ```python
 >>from coca.ortho_correct import OrthoCorrect
