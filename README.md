@@ -31,7 +31,7 @@ Once downloaded, the package can be used like any other python library via 'impo
 >>corrected
 >>"J'aime du cocolate."
 >>analyse
->>["cocolate", "chocolate"]
+>>[("cocolate", "chocolate")]
 #choose the interactif correction mode
 >>corrector.correctionInteratif("J'aime du cocolate.")
 >>forme fautive détectée: éternelement
