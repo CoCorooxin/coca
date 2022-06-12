@@ -15,15 +15,18 @@ Once downloaded, the package can be used like any other python library via 'impo
 #create an instance of the corrector 
 >>corrector = OrthoCorrect() 
 #choose the automatic correction mode for your french text
->>corrector.correctionAutomatique("J'aime du cocolate.")[0]
+>>corrector.correctionAutomatique("J'aime du cocolate.")
 #this return a tuple, the first element is the corrected string the second element is a list of all the detected errors [(error1, corrected forme1), (error2, corrected forme2)...]
->>"J'aime du chocolat."
+>>("J'aime du chocolat.", [("cocolate", "chocolat")])
 #an easy way to get the results
 >>corrected, analyse = corrector.correctionAutomatique("J'aime du cocolate.")
 >>corrected
 >>"J'aime du cocolat."
 >>analyse
 >>[("cocolate", "chocolat")]
+#or
+>>corrected = corrector.correctionAutomatique("J'aime du cocolate.")[0]
+>>"J'aime du cocolat."
 #choose the interactif correction mode
 >>corrector.correctionInteratif("J'aime du cocolate.")
 >>forme fautive détectée: cocolate
