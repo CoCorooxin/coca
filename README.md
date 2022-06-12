@@ -8,16 +8,6 @@ The user can download the package via the following command line:
 ```cli
 pip install -i https://test.pypi.org/simple/ coca==1.2.4
 ```
-Warning: The windows system has a bug while coping with the building wheel for this package. 
-
-The package relies on the spacy language model fr_core_news_sm
-
-The model needs to be downloaded through the command line before using coca via import.
-
-```cli
-python -m spacy download fr_core_news_sm
-```
-
 Once downloaded, the package can be used like any other python library via 'import coca'
 
 ```python
