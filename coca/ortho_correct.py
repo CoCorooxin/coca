@@ -2,8 +2,6 @@ import sys
 from unicodedata import category
 import requests
 import re
-import spacy
-from spacy import displacy
 
 class OrthoCorrect(object):
     def __init__(self):
@@ -19,8 +17,7 @@ class OrthoCorrect(object):
             "https://raw.githubusercontent.com/mducos/Correcteur-orthographique/main/production/words_with_dash.json").json()
         self.chrs = (chr(i) for i in range(sys.maxunicode + 1))
         self.punctuation = set(c for c in self.chrs if category(c).startswith("P"))
-        self.nlp = spacy.load("fr_core_news_sm")
-
+   
     def _edits1(self, word):
         # ensemble des lettres de la langue française
         letters = 'abcdefghijklmnopqrstuvwxyzàâæçéèêëîïôœùûüÿ-'
@@ -223,10 +220,6 @@ class OrthoCorrect(object):
 
         return tokens
 
-    def _person(self, text)->list: #reconnaissance des entités nominales
-        doc = self.nlp(text)
-        return " ".join([ent.text for ent in doc.ents]).split()
-
     def _rechercheWordDict(self, word):
         # si le mot n'est pas un signe de ponctuation
         if not (word in self.punctuation):
@@ -240,12 +233,10 @@ class OrthoCorrect(object):
         count = 0
         to_write = ''
         # pour chaque élément dans cette liste tokenisée
-        nertuple = tuple(self._person(todo))
-        #print(nertuple)
+       
         for id in range(len(list_lemme)):
             # si le mot n'existe pas
-            nerVal = list_lemme[id].startswith(nertuple)
-            if self._rechercheWordDict(list_lemme[id]) is False and nerVal is False:
+            if self._rechercheWordDict(list_lemme[id]) is False:
                 # enregistrement de la forme juste la plus probable du mot fautif
                 corrected = self.corrigeMotAuto(list_lemme[id].lower())
                 # si la forme juste la plus probable n'a pas été trouvée
@@ -285,12 +276,10 @@ class OrthoCorrect(object):
         list_lemme = (self.tokenizer(todo))
         to_write = ''
         # pour chaque élément dans cette liste tokenisée
-        nertuple = tuple(self._person(todo))
-        # print(nertuple)
+  
         for id in range(len(list_lemme)):
             # si le mot n'existe pas
-            nerVal = list_lemme[id].startswith(nertuple)
-            if self._rechercheWordDict(list_lemme[id]) is False and nerVal is False:
+            if self._rechercheWordDict(list_lemme[id]) is False:
                 # enregistrement de la forme juste la plus probable du mot fautif
                 corrected = self.corrigeMotInter(list_lemme[id].lower())
                 # si la forme juste la plus probable n'a pas été trouvée
