@@ -9,7 +9,6 @@ setuptools.setup(name='coca',
       packages=setuptools.find_packages(),
       install_requires=[
             'requests',
-            'spacy'
       ]
 
       )
