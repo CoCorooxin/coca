@@ -15,25 +15,25 @@ Once downloaded, the package can be used like any other python library via 'impo
 #create an instance of the corrector 
 >>corrector = OrthoCorrect() 
 #choose the automatic correction mode for your french text
->>corrector.correctionAutomatique("J'aime du cocolate.")
+>>corrector.correctionAutomatique("J'aime le cocolate.")
 #this return a tuple, the first element is the corrected string the second element is a list of all the detected errors [(error1, corrected forme1), (error2, corrected forme2)...]
->>("J'aime du chocolat.", [("cocolate", "chocolat")])
+>>("J'aime le chocolat.", [("cocolate", "chocolat")])
 #an easy way to get the results
->>corrected, analyse = corrector.correctionAutomatique("J'aime du cocolate.")
+>>corrected, analyse = corrector.correctionAutomatique("J'aime le cocolate.")
 >>corrected
->>"J'aime du cocolat."
+>>"J'aime le cocolat."
 >>analyse
 >>[("cocolate", "chocolat")]
 #or
->>corrected = corrector.correctionAutomatique("J'aime du cocolate.")[0]
->>"J'aime du cocolat."
+>>corrected = corrector.correctionAutomatique("J'aime v cocolate.")[0]
+>>"J'aime du chocolat."
 #choose the interactif correction mode
->>corrector.correctionInteratif("J'aime du cocolate.")
+>>corrector.correctionInteratif("J'aime le cocolate.")
 >>forme fautive détectée: cocolate
-..dans le contexte : "J'aime du cocolate."
+..dans le contexte : "J'aime le cocolate."
 ..Veuillez choisir une correction possible : .."chocolat", "not found"
 .."chocolat" 
->>"J'aime du chocolat."
+>>"J'aime le chocolat."
 #correct a single word in french
 >>corrector.corrigeMotAuto("cocolate")
 >>"chocolat"
@@ -42,7 +42,7 @@ Once downloaded, the package can be used like any other python library via 'impo
 ortho_correct includes also a simple and intuitive tokenizer.
 
 ```python
->>corrector.tokenizer("Harry aime du chocolat.")
->>["Harry", "aime", "du", "chocolat", "."]
+>>corrector.tokenizer("Harry aime le chocolat.")
+>>["Harry", "aime", "le", "chocolat", "."]
 ```
 
